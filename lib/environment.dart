@@ -1,6 +1,6 @@
 class Environment {
   /* ATTENTION Please update your desired data. */
-  static const String appName = 'OvoRide USER';
+  static const String appName = 'Emira Ride';
   static const String version = '1.0.0';
   static String defaultLangCode = "en";
   static String defaultLanguageName = "English";
