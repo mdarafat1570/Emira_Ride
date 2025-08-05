@@ -15,7 +15,7 @@ class Environment {
   // 🗺️ MAP CONFIG
   static const bool addressPickerFromMapApi = true; // Use Google Maps API for reverse geocode
 
-  static const String mapKey = "AIzaSyBXffbNxCxmhztZGvc9plHKw92bjbOGgGI"; // 🔐 Use your actual Google Maps API Key
+  static const String mapKey = " "; // 🔐 Use your actual Google Maps API Key
   static const double mapDefaultZoom = 16;
 
   // 🔧 DEV TOKEN or placeholder for testing auth
