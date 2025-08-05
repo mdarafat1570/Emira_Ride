@@ -1020,6 +1020,13 @@ class MyStrings {
 
   static const String runningRideAlertTitle = "Complete your ride";
   static const String runningRideAlertSubTitle = "You've reached your destination. Please confirm to end the ride";
+  static const String mapSubTitle = "Map Finder";
+  static const String hourlySubTitle = "Hourly Ride";
+  static const String dailySubTitle = "Daily Ride";
+  static const String rentSubTitle = "Property Rent";
+
+
+
 
   static List<MyLanguageModel> myLanguages = [
     MyLanguageModel(

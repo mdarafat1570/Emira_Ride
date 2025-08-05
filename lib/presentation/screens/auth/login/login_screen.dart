@@ -71,17 +71,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.asset(
-                      MyImages.appLogoWhite,
-                      width: MediaQuery.of(context).size.width / 3,
-                    ),
                     Align(
                       alignment: Alignment.center,
-                      child: SvgPicture.asset(
-                        MyIcons.bg,
+                      child: Image.asset(
+                        MyImages.appLogoWhite,
                         width: double.infinity,
                         fit: BoxFit.contain,
-                        height: 200,
+                        height: 130,
                       ),
                     ),
                     Container(

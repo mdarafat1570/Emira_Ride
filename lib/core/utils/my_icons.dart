@@ -36,6 +36,8 @@ class MyIcons {
   static const String noDataFound = "assets/icon/no_ride_icon.svg";
   static const String language = "assets/icon/language.svg";
   static const String info = "assets/icon/info.svg";
+  static const String hourlyTime = "assets/icon/hourlyclock.svg";
+  static const String daily = "assets/icon/dailyclock.svg";
 
   static const String pdfFile = "assets/icon/files/pdf.svg";
   static const String file = "assets/icon/files/folder.svg";

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_images.dart';
@@ -37,32 +38,44 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     MyUtils.allScreen();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return GetBuilder<SplashController>(
-      builder: (controller) => Scaffold(
-        backgroundColor: controller.noInternet ? MyColor.colorWhite : MyColor.primaryColor,
-        body: controller.noInternet
-            ? NoDataOrInternetScreen(
-                isNoInternet: true,
-                onChanged: () {
-                  controller.gotoNextPage();
-                },
-              )
-            : Stack(
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: Image.asset(
-                      MyImages.appLogoIcon,
-                      height: 100,
-                      width: 100,
-                    ),
-                  ),
-                ],
+      builder: (controller) => AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle.dark.copyWith(
+          statusBarColor: Colors.white, // status bar background color
+          systemNavigationBarColor: Colors.white, // navigation bar background color
+          systemNavigationBarIconBrightness: Brightness.dark, // dark icons
+          statusBarIconBrightness: Brightness.dark, // dark icons
+        ),
+        child: Scaffold(
+          backgroundColor: Colors.white,
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            elevation: 0,
+            automaticallyImplyLeading: true, // show back button if needed
+            iconTheme: const IconThemeData(color: Colors.black), // back button color
+          ),
+          body: controller.noInternet
+              ? NoDataOrInternetScreen(
+            isNoInternet: true,
+            onChanged: () {
+              controller.gotoNextPage();
+            },
+          )
+              : Stack(
+            children: [
+              Align(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  MyImages.appLogoIcon,
+                  height: 100,
+                  width: 100,
+                ),
               ),
+            ],
+          ),
+        ),
       ),
     );
-  }
-}
+  }}

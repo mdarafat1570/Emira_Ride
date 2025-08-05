@@ -127,6 +127,51 @@ class _ProfileAndSettingsScreenState extends State<ProfileAndSettingsScreen> {
                       decoration: BoxDecoration(
                         color: MyColor.getCardBgColor(),
                         borderRadius: BorderRadius.circular(Dimensions.space12),
+                        boxShadow: MyUtils.getShadow(),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          HeaderText(
+                            text: MyStrings.appName.tr.toUpperCase(),
+                            textStyle: regularLarge.copyWith(
+                              color: MyColor.bodyText,
+                            ),
+                          ),
+                          spaceDown(Dimensions.space20),
+                          MenuRowWidget(
+                            image: MyImages.mapDriver,
+                            label: MyStrings.mapSubTitle,
+                            onPressed: () => Get.toNamed(RouteHelper.mapWebViewScreen),
+                          ),
+                          const CustomDivider(space: Dimensions.space15),
+                          MenuRowWidget(
+                            image: MyIcons.hourlyTime,
+                            label: MyStrings.hourlySubTitle.tr,
+                            onPressed: () => Get.toNamed(RouteHelper.hourlyWebViewScreen),
+                          ),
+                          const CustomDivider(space: Dimensions.space15),
+                          MenuRowWidget(
+                            image: MyIcons.coin,
+                            label: MyStrings.dailySubTitle.tr,
+                            onPressed: () => Get.toNamed(RouteHelper.dailyWebViewScreen),
+                          ),
+                          const CustomDivider(space: Dimensions.space15),
+                          MenuRowWidget(
+                            image: MyIcons.money,
+                            label: MyStrings.rentSubTitle.tr,
+                            onPressed: () => Get.toNamed(RouteHelper.rentWebViewScreen),
+                          ),
+                        ],
+                      ),
+                    ),
+                    spaceDown(Dimensions.space15),
+                    Container(
+                      padding: const EdgeInsets.all(Dimensions.space15),
+                      decoration: BoxDecoration(
+                        color: MyColor.getCardBgColor(),
+                        borderRadius: BorderRadius.circular(Dimensions.space12),
                         boxShadow: MyUtils.getCardShadow(),
                       ),
                       child: Column(
@@ -296,7 +341,7 @@ class _ProfileAndSettingsScreenState extends State<ProfileAndSettingsScreen> {
                         ],
                       ),
                     ),
-                    spaceDown(Dimensions.space15),
+                    spaceDown(Dimensions.space50 * 2),
                     Container(
                       padding: const EdgeInsets.all(Dimensions.space15),
                       decoration: BoxDecoration(

@@ -1,4 +1,4 @@
-package com.ovosolution.ovorideuser
+package com.inferloom.emirarider
 
 import io.flutter.embedding.android.FlutterActivity
 
