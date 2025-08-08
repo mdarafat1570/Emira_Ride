@@ -68,7 +68,7 @@ class _LocationPickUpHomeWidgetState extends State<LocationPickUpHomeWidget> {
               text: widget.controller.getSelectedLocationInfoAtIndex(0)?.getFullAddress(showFull: true) ?? (widget.controller.currentAddress.contains(MyStrings.loading) ? '' : widget.controller.currentAddress),
             ),
             onTap: () {
-              widget.controller.updateIsServiceShake(false);
+              widget.controller.updateIsServiceShake(true);
               Get.toNamed(RouteHelper.locationPickUpScreen, arguments: [0])?.then((v) {
                 if (widget.controller.selectedLocations.length > 1 && widget.controller.selectedService.id != '-99') {
                   widget.controller.getRideFare();
