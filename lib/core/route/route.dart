@@ -153,6 +153,7 @@ class RouteHelper {
   static const String hourlyWebViewScreen = '/hourly_web_view_screen';
   static const String dailyWebViewScreen = '/daily_web_view_screen';
   static const String rentWebViewScreen = '/rent_web_view_screen';
+  static const String scheduledWebViewScreen = '/scheduled_web_view_screen';
 
   List<GetPage> routes = [
     GetPage(name: splashScreen, page: () => const SplashScreen()),
@@ -329,9 +330,10 @@ class RouteHelper {
 
     GetPage(name: maintenanceScreen, page: () => MaintenanceScreen()),
     GetPage(name: mapWebViewScreen, page: () => const MapWebPage()),
-    GetPage(name: hourlyWebViewScreen, page: () => const HourlyWebPage()),
-    GetPage(name: dailyWebViewScreen, page: () => const DailyWebPage()),
-    GetPage(name: rentWebViewScreen, page: () => const RentWebPage()),
+    GetPage(name: hourlyWebViewScreen, page: () => HourlyWebPage(mobileNumber: Get.arguments)),
+    GetPage(name: dailyWebViewScreen, page: () => DailyWebPage(mobileNumber: Get.arguments)),
+    GetPage(name: rentWebViewScreen, page: () => RentWebPage()),
+    GetPage(name: scheduledWebViewScreen, page: () => ScheduledWebPage(mobileNumber: Get.arguments)),
 
   ];
 }

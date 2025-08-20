@@ -16,6 +16,7 @@ class MenuRowWidget extends StatelessWidget {
   final bool counterEnabled;
   final VoidCallback onPressed;
   final Widget? endWidget;
+  final IconData? icon;
 
   const MenuRowWidget({
     super.key,
@@ -28,6 +29,7 @@ class MenuRowWidget extends StatelessWidget {
     this.endWidget,
     this.imgColor,
     this.textColor,
+    this.icon,
   });
 
   @override

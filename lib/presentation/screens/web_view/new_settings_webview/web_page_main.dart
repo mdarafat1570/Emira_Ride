@@ -5,8 +5,11 @@ import 'package:ovorideuser/presentation/components/app-bar/custom_appbar.dart';
 class WebViewPage extends StatefulWidget {
   final String title;
   final String url;
+  final bool appBar;
+  final bool showBackButton;
+  final Color appBarColor;
 
-  const WebViewPage({Key? key, required this.title, required this.url}) : super(key: key);
+  const WebViewPage({Key? key, required this.title, required this.url, this.appBar = true, this.showBackButton = true, this.appBarColor = Colors.blue}) : super(key: key);
 
   @override
   State<WebViewPage> createState() => _WebViewPageState();
@@ -31,8 +34,9 @@ class _WebViewPageState extends State<WebViewPage> {
     return Scaffold(
       appBar: CustomAppBar(
         title: widget.title,
-        isShowBackBtn: true,
+        isShowBackBtn: widget.showBackButton,
         isTitleCenter: true,
+        bgColor: widget.appBarColor,
       ),
       body: Stack(
         children: [

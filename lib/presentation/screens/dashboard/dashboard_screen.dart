@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/my_icons.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
+import 'package:ovorideuser/data/controller/account/profile_controller.dart'; // Import ProfileController
 import 'package:ovorideuser/data/controller/menu/my_menu_controller.dart';
 import 'package:ovorideuser/data/controller/pusher/global_pusher_controller.dart';
+import 'package:ovorideuser/data/repo/account/profile_repo.dart'; // Import ProfileRepo
 import 'package:ovorideuser/data/repo/auth/general_setting_repo.dart';
 import 'package:ovorideuser/data/repo/menu_repo/menu_repo.dart';
 import 'package:ovorideuser/presentation/components/annotated_region/annotated_region_widget.dart';
@@ -11,6 +13,7 @@ import 'package:ovorideuser/presentation/screens/home/home_screen.dart';
 import 'package:ovorideuser/presentation/screens/profile_and_settings/profile_and_settings_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:ovorideuser/presentation/screens/web_view/scheduled_web_page_loader.dart';
 import '../../../core/utils/dimensions.dart';
 import '../../../core/utils/my_color.dart';
 import '../../components/will_pop_widget.dart';
@@ -39,15 +42,21 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     Get.put(GeneralSettingRepo(apiClient: Get.find()));
     Get.put(MenuRepo(apiClient: Get.find()));
     Get.put(MyMenuController(menuRepo: Get.find(), repo: Get.find()));
+    Get.put(ProfileRepo(apiClient: Get.find()));
+    final profileController = Get.put(ProfileController(profileRepo: Get.find()));
+
     final pusherController = Get.put(GlobalPusherController(apiClient: Get.find()));
     _dashBoardScaffoldKey = GlobalKey<ScaffoldState>();
 
     _widgets = <Widget>[
       HomeScreen(dashBoardScaffoldKey: _dashBoardScaffoldKey),
       InterCityScreen(dashBoardScaffoldKey: _dashBoardScaffoldKey),
+      const ScheduledWebPageLoader(), 
       const ProfileAndSettingsScreen(),
     ];
+
     WidgetsBinding.instance.addPostFrameCallback((t) {
+      profileController.loadProfileInfo();
       pusherController.ensureConnection();
     });
   }
@@ -74,7 +83,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             callback: (val) {
               selectedIndex = val;
               setState(() {});
-              closeDrawer(); // closeDrawer
+              closeDrawer();
             },
           ),
           body: WillPopWidget(child: _widgets[selectedIndex]),
@@ -118,11 +127,19 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                   ),
                 ),
                 FloatingNavbarItem(
-                  icon: LineIcons.list,
-                  title: MyStrings.menu.tr,
+                  icon: LineIcons.calendar, // Changed icon for clarity
+                  title: MyStrings.preBookSubTitle.tr,
+                  customWidget: CustomSvgPicture(
+                    image: MyIcons.hourlyTime, // Changed icon for clarity
+                    color: selectedIndex == 2 ? MyColor.primaryColor : MyColor.colorGreyIcon,
+                  ),
+                ),
+                FloatingNavbarItem(
+                  icon: LineIcons.user, // Changed icon for clarity
+                  title: MyStrings.menu.tr, // This corresponds to the Profile/Settings screen
                   customWidget: CustomSvgPicture(
                     image: MyIcons.menu1,
-                    color: selectedIndex == 2 ? MyColor.primaryColor : MyColor.colorGreyIcon,
+                    color: selectedIndex == 3 ? MyColor.primaryColor : MyColor.colorGreyIcon,
                   ),
                 ),
               ],

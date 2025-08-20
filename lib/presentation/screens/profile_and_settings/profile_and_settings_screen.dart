@@ -11,6 +11,7 @@ import 'package:ovorideuser/presentation/components/text/header_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ovorideuser/presentation/screens/profile_and_settings/widgets/delete_account_bottom_sheet.dart';
+import 'package:ovorideuser/presentation/screens/web_view/new_settings_webview/all_web_view_page.dart';
 import '../../../core/route/route.dart';
 import '../../../core/utils/dimensions.dart';
 import '../../../core/utils/my_color.dart';
@@ -145,24 +146,39 @@ class _ProfileAndSettingsScreenState extends State<ProfileAndSettingsScreen> {
                             label: MyStrings.mapSubTitle,
                             onPressed: () => Get.toNamed(RouteHelper.mapWebViewScreen),
                           ),
-                          const CustomDivider(space: Dimensions.space15),
-                          MenuRowWidget(
+                            const CustomDivider(space: Dimensions.space15),
+                            MenuRowWidget(
                             image: MyIcons.hourlyTime,
                             label: MyStrings.hourlySubTitle.tr,
-                            onPressed: () => Get.toNamed(RouteHelper.hourlyWebViewScreen),
-                          ),
-                          const CustomDivider(space: Dimensions.space15),
-                          MenuRowWidget(
+                            onPressed: () {
+                              String mobile = controller.user.mobile ?? '';
+                              Get.to(() => HourlyWebPage(mobileNumber: mobile));
+                            },
+                            ),
+                            const CustomDivider(space: Dimensions.space15),
+                            MenuRowWidget(
                             image: MyIcons.coin,
                             label: MyStrings.dailySubTitle.tr,
-                            onPressed: () => Get.toNamed(RouteHelper.dailyWebViewScreen),
-                          ),
+                            onPressed: () {
+                              String mobile = controller.user.mobile ?? '';
+                              Get.to(() => DailyWebPage(mobileNumber: mobile));
+                            },
+                            ),
                           const CustomDivider(space: Dimensions.space15),
                           MenuRowWidget(
                             image: MyIcons.money,
                             label: MyStrings.rentSubTitle.tr,
                             onPressed: () => Get.toNamed(RouteHelper.rentWebViewScreen),
                           ),
+                           const CustomDivider(space: Dimensions.space15),
+                           MenuRowWidget(
+                            image: MyIcons.info,
+                            label: MyStrings.othersSubTitle.tr,
+                            onPressed: () {
+                              String mobile = controller.user.mobile ?? '';
+                              Get.to(() => OthersWebPage(mobileNumber: mobile));
+                            },
+                            ),
                         ],
                       ),
                     ),
@@ -341,7 +357,7 @@ class _ProfileAndSettingsScreenState extends State<ProfileAndSettingsScreen> {
                         ],
                       ),
                     ),
-                    spaceDown(Dimensions.space50 * 2),
+                    const CustomDivider(space: Dimensions.space15),
                     Container(
                       padding: const EdgeInsets.all(Dimensions.space15),
                       decoration: BoxDecoration(
@@ -419,7 +435,7 @@ class _ProfileAndSettingsScreenState extends State<ProfileAndSettingsScreen> {
                         ],
                       ),
                     ),
-                    spaceDown(Dimensions.space50 * 2)
+                    const CustomDivider(space: Dimensions.space15),
                   ],
                 ),
               ),

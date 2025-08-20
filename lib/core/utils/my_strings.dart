@@ -1024,6 +1024,9 @@ class MyStrings {
   static const String hourlySubTitle = "Hourly Ride";
   static const String dailySubTitle = "Daily Ride";
   static const String rentSubTitle = "Property Rent";
+  static const String scheduledSubTitle = "Scheduled Ride";
+  static const String othersSubTitle = "Other's";
+  static const String preBookSubTitle = "Pre Book";
 
 
 
