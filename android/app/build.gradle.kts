@@ -42,10 +42,10 @@ android {
 
     defaultConfig {
         applicationId = "com.inferloom.emirarider"
-        minSdk = 21
-        targetSdk = 36
-        versionCode = versionCodeProp.toInt()
-        versionName = versionNameProp
+        minSdk = 24
+        targetSdk = flutter.targetSdkVersion
+        versionCode = flutter.versionCode
+        versionName = flutter.versionName
         multiDexEnabled = true
     }
 
