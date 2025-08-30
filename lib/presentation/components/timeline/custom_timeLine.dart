@@ -1,11 +1,9 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, must_be_immutable
 import 'package:flutter/material.dart';
-import 'package:timelines_plus/timelines_plus.dart';
-
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_icons.dart';
-
 import 'package:ovorideuser/presentation/components/image/custom_svg_picture.dart';
+import 'package:timelines_plus/timelines_plus.dart';
 
 class CustomTimeLine extends StatelessWidget {
   Widget firstWidget;

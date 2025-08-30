@@ -1,3 +1,6 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
@@ -13,9 +16,6 @@ import 'package:ovorideuser/presentation/components/bottom-sheet/bottom_sheet_he
 import 'package:ovorideuser/presentation/components/buttons/rounded_button.dart';
 import 'package:ovorideuser/presentation/components/divider/custom_divider.dart';
 import 'package:ovorideuser/presentation/components/image/custom_svg_picture.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:get/get.dart';
 import 'package:ovorideuser/presentation/components/image/my_network_image_widget.dart';
 import 'package:ovorideuser/presentation/components/snack_bar/show_custom_snackbar.dart';
 import 'package:ovorideuser/presentation/components/text-form-field/custom_text_field.dart';

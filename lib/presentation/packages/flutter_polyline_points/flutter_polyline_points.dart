@@ -4,13 +4,13 @@ import 'package:ovorideuser/presentation/packages/flutter_polyline_points/src/po
 import 'package:ovorideuser/presentation/packages/flutter_polyline_points/src/polyline_request.dart';
 import 'package:ovorideuser/presentation/packages/flutter_polyline_points/src/polyline_result.dart';
 
-export 'network_util.dart';
-export 'point_lat_lng.dart';
 export './src/polyline_decoder.dart';
 export './src/polyline_request.dart';
 export './src/polyline_result.dart';
 export './src/polyline_waypoint.dart';
 export './src/request_enums.dart';
+export 'network_util.dart';
+export 'point_lat_lng.dart';
 
 class PolylinePoints {
   /// Get the list of coordinates between two geographical positions

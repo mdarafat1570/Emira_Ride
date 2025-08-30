@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';

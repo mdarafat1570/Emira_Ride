@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_images.dart';
 import 'package:ovorideuser/core/utils/util.dart';
 import 'package:ovorideuser/data/controller/localization/localization_controller.dart';

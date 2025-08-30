@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/date_converter.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/route/route.dart';
@@ -10,11 +12,10 @@ import 'package:ovorideuser/core/utils/url_container.dart';
 import 'package:ovorideuser/core/utils/util.dart';
 import 'package:ovorideuser/data/controller/ride/active_ride/ride_history_controller.dart';
 import 'package:ovorideuser/data/model/global/app/ride_model.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:ovorideuser/data/services/download_service.dart';
 import 'package:ovorideuser/environment.dart';
 import 'package:ovorideuser/presentation/components/buttons/rounded_button.dart';
+
 import '../../../components/divider/custom_spacer.dart';
 import '../../../components/timeline/custom_timeLine.dart';
 

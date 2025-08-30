@@ -1,12 +1,11 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/data/controller/home/home_controller.dart';
 import 'package:ovorideuser/data/controller/location/app_location_controller.dart';
 import 'package:ovorideuser/data/repo/home/home_repo.dart';
-
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
 import 'package:ovorideuser/presentation/screens/home/widgets/home_app_bar.dart';
 import 'package:ovorideuser/presentation/screens/home/widgets/home_body.dart';

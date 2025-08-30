@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/data/model/global/response_model/response_model.dart';
@@ -8,6 +7,7 @@ import 'package:ovorideuser/data/model/global/user/global_user_model.dart';
 import 'package:ovorideuser/data/model/refer/reference_response_model.dart';
 import 'package:ovorideuser/data/repo/refer/reference_repo.dart';
 import 'package:ovorideuser/presentation/components/snack_bar/show_custom_snackbar.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ReferenceController extends GetxController {
   ReferenceRepo repo;

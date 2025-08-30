@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_animation.dart';
@@ -7,7 +8,6 @@ import 'package:ovorideuser/core/utils/my_images.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/core/utils/style.dart';
 import 'package:ovorideuser/presentation/components/buttons/rounded_button.dart';
-import 'package:get/get.dart';
 
 class AppDialog {
   void warningAlertDialog(

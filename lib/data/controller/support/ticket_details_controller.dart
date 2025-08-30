@@ -5,6 +5,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:open_file/open_file.dart';
 import 'package:ovorideuser/core/helper/shared_preference_helper.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
@@ -16,7 +17,6 @@ import 'package:ovorideuser/data/model/support/support_ticket_view_response_mode
 import 'package:ovorideuser/data/repo/support/support_repo.dart';
 import 'package:ovorideuser/environment.dart';
 import 'package:ovorideuser/presentation/components/snack_bar/show_custom_snackbar.dart';
-import 'package:open_file/open_file.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 

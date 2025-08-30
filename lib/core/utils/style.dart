@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:ovorideuser/core/utils/dimensions.dart';
-
 import 'package:ovorideuser/core/utils/my_color.dart';
 
 const TextStyle lightOverSmall = TextStyle(

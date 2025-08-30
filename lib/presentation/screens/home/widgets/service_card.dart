@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/style.dart';
@@ -7,7 +8,6 @@ import 'package:ovorideuser/data/controller/home/home_controller.dart';
 import 'package:ovorideuser/data/model/global/app/app_service_model.dart';
 import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
 import 'package:ovorideuser/presentation/components/image/my_network_image_widget.dart';
-import 'package:get/get.dart';
 
 class ServiceCard extends StatelessWidget {
   final AppService service;

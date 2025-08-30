@@ -1,10 +1,11 @@
 // ignore_for_file: unrelated_type_equality_checks
 
+import 'package:flutter/material.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/data/model/global/app/app_payment_method.dart';
 import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
 import 'package:ovorideuser/presentation/components/image/my_network_image_widget.dart';
-import 'package:flutter/material.dart';
+
 import '../../../core/utils/dimensions.dart';
 import '../../../core/utils/my_color.dart';
 import '../../../core/utils/style.dart';

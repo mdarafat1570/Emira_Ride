@@ -1,4 +1,5 @@
 import 'dart:convert';
+
 import 'package:ovorideuser/data/model/global/app/ride_model.dart';
 import 'package:ovorideuser/data/model/global/user/global_driver_model.dart';
 import 'package:ovorideuser/data/model/global/user/global_user_model.dart';

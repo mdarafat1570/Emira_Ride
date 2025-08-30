@@ -4,8 +4,8 @@
 
 import 'dart:convert';
 
-import 'package:ovorideuser/data/model/global/bid/bid_model.dart';
 import 'package:ovorideuser/data/model/global/app/ride_model.dart';
+import 'package:ovorideuser/data/model/global/bid/bid_model.dart';
 
 BidListResponseModel bidListResponseModelFromJson(String str) => BidListResponseModel.fromJson(json.decode(str));
 

@@ -1,70 +1,42 @@
+import 'package:get/get.dart';
 import 'package:ovorideuser/presentation/screens/Profile/profile_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/account/change-password/change_password_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/auth/email_verification_page/email_verification_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/auth/forget_password/forget_password/forget_password.dart';
-
 import 'package:ovorideuser/presentation/screens/auth/forget_password/reset_password/reset_password_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/auth/forget_password/verify_forget_password/verify_forget_password_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/auth/login/login_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/auth/profile_complete/profile_complete_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/auth/registration/registration_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/auth/sms_verification_page/sms_verification_screen.dart';
+import 'package:ovorideuser/presentation/screens/coupon/coupon_screen.dart';
 import 'package:ovorideuser/presentation/screens/dashboard/dashboard_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/edit_profile/edit_profile_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/faq/faq_screen.dart';
 import 'package:ovorideuser/presentation/screens/image_preview/preview_image_screen.dart';
 import 'package:ovorideuser/presentation/screens/inbox/ride_message_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/inter_city/inter_city_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/language/language_screen.dart';
 import 'package:ovorideuser/presentation/screens/location/screen/locationpicker/location_edit_screen.dart';
 import 'package:ovorideuser/presentation/screens/location/screen/locationpicker/location_picker_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/location/screen/ride_details_screen.dart';
 import 'package:ovorideuser/presentation/screens/maintenance/maintanance_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/onbaord/onboard_intro_screen.dart';
-
-import 'package:ovorideuser/presentation/screens/coupon/coupon_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/payment/payment_screen.dart';
-
+import 'package:ovorideuser/presentation/screens/payment_history/payments_history_screen.dart';
 import 'package:ovorideuser/presentation/screens/privacy_policy/privacy_policy_screen.dart';
 import 'package:ovorideuser/presentation/screens/profile_and_settings/profile_and_settings_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/referral_a_friends/referral_a_friends_screen.dart';
 import 'package:ovorideuser/presentation/screens/review/driver_review_history_screen.dart';
-import 'package:ovorideuser/presentation/screens/review/ride_review_screen.dart';
 import 'package:ovorideuser/presentation/screens/review/my_review_history_screen.dart';
-
+import 'package:ovorideuser/presentation/screens/review/ride_review_screen.dart';
 import 'package:ovorideuser/presentation/screens/ride/ride_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/ride_bid_list/ride_bid_list_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/splash/splash_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/ticket/new_ticket_screen/add_new_ticket_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/ticket/support_ticket_screen.dart';
-
 import 'package:ovorideuser/presentation/screens/ticket/ticket_details/ticket_details_screen.dart';
-
-import 'package:ovorideuser/presentation/screens/payment_history/payments_history_screen.dart';
-
-import 'package:get/get.dart';
 import 'package:ovorideuser/presentation/screens/web_view/new_settings_webview/all_web_view_page.dart';
-
 import 'package:ovorideuser/presentation/screens/web_view/web_view_screen.dart';
 
 class RouteHelper {

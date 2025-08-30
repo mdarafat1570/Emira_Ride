@@ -19,7 +19,6 @@ import 'package:ovorideuser/presentation/components/text-form-field/custom_text_
 import 'package:ovorideuser/presentation/components/text/label_text.dart';
 import 'package:ovorideuser/presentation/screens/ticket/ticket_details/widget/attachment_preview.dart';
 import 'package:ovorideuser/presentation/screens/ticket/ticket_details/widget/ticket_meassge_widget.dart';
-
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
 
 class TicketDetailsScreen extends StatefulWidget {

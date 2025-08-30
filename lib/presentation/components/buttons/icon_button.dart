@@ -1,10 +1,9 @@
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:ovorideuser/core/utils/dimensions.dart';
-import 'package:ovorideuser/core/utils/style.dart';
 import 'package:flutter/material.dart';
-
-import 'package:ovorideuser/core/utils/my_color.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:ovorideuser/core/utils/dimensions.dart';
+import 'package:ovorideuser/core/utils/my_color.dart';
+import 'package:ovorideuser/core/utils/style.dart';
 
 class CustomIconButton extends StatelessWidget {
   final String name;

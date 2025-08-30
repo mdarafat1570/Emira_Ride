@@ -1,10 +1,12 @@
 import 'dart:io';
+
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:ovorideuser/presentation/screens/auth/profile_complete/widget/build_circle_widget.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:ovorideuser/presentation/components/circle_image_button.dart';
+import 'package:ovorideuser/presentation/screens/auth/profile_complete/widget/build_circle_widget.dart';
+
 import '../../../../../../../../core/utils/my_color.dart';
 import '../../../../../../../core/utils/my_images.dart';
 import '../../../../../data/controller/account/profile_controller.dart';

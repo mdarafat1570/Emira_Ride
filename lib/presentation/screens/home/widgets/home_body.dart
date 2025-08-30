@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/utils/my_icons.dart';
@@ -10,6 +11,7 @@ import 'package:ovorideuser/presentation/components/shimmer/ride_services_shimme
 import 'package:ovorideuser/presentation/screens/home/section/ride_create_form.dart';
 import 'package:ovorideuser/presentation/screens/home/section/ride_service_section.dart';
 import 'package:ovorideuser/presentation/screens/home/widgets/bottomsheet/ride_meassage_bottom_sheet_body.dart';
+
 import '../../../../core/utils/dimensions.dart';
 import '../../../../core/utils/my_color.dart';
 import '../../../../core/utils/my_strings.dart';
@@ -18,7 +20,6 @@ import '../../../../core/utils/util.dart';
 import '../../../components/bottom-sheet/custom_bottom_sheet.dart';
 import '../../../components/buttons/rounded_button.dart';
 import '../../../components/divider/custom_spacer.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class HomeBody extends StatefulWidget {
   final HomeController controller;

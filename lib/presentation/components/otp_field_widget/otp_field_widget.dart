@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:ovorideuser/core/utils/style.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
+
 import '../../../core/utils/dimensions.dart';
 import '../../../core/utils/my_color.dart';
 

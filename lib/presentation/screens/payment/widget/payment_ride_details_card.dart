@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/date_converter.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
@@ -9,8 +11,6 @@ import 'package:ovorideuser/data/model/global/app/ride_model.dart';
 import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
 import 'package:ovorideuser/presentation/components/image/my_network_image_widget.dart';
 import 'package:ovorideuser/presentation/components/timeline/custom_timeLine.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../components/dotted_border/dotted_border.dart';
 

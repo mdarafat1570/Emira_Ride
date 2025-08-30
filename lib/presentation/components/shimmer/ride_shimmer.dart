@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
-
 import 'package:ovorideuser/presentation/components/shimmer/my_shimmer.dart';
 import 'package:ovorideuser/presentation/components/timeline/custom_timeLine.dart';
 

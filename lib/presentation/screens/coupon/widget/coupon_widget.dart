@@ -1,4 +1,6 @@
 import 'package:coupon_uikit/coupon_uikit.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/utils/app_status.dart';
@@ -9,8 +11,6 @@ import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/core/utils/style.dart';
 import 'package:ovorideuser/data/model/global/app/app_coupon_model.dart';
 import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 class MyCouponCard extends StatelessWidget {
   bool isApplied = false;

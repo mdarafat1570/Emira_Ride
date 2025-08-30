@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
@@ -7,7 +8,6 @@ import 'package:ovorideuser/core/utils/url_container.dart';
 import 'package:ovorideuser/data/controller/account/profile_complete_controller.dart';
 import 'package:ovorideuser/presentation/components/bottom-sheet/bottom_sheet_header_row.dart';
 import 'package:ovorideuser/presentation/components/bottom-sheet/custom_bottom_sheet.dart';
-import 'package:get/get.dart';
 import 'package:ovorideuser/presentation/components/image/my_network_image_widget.dart';
 
 class CountryBottomSheet {

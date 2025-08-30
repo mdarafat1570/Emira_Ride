@@ -1,15 +1,14 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/data/controller/ride/ride_screen_settings/ride_screen_settings_controller.dart';
 import 'package:ovorideuser/presentation/components/app-bar/custom_appbar.dart';
-import 'package:ovorideuser/presentation/screens/ride/section/new_ride_section.dart';
 import 'package:ovorideuser/presentation/screens/ride/section/all_ride_section.dart';
-import 'package:ovorideuser/presentation/screens/ride/section/running_ride_section.dart';
 import 'package:ovorideuser/presentation/screens/ride/section/complete_ride_section.dart';
-
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:ovorideuser/presentation/screens/ride/section/new_ride_section.dart';
+import 'package:ovorideuser/presentation/screens/ride/section/running_ride_section.dart';
 
 class RideScreen extends StatefulWidget {
   const RideScreen({super.key});

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/route/route.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
@@ -6,11 +8,9 @@ import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/core/utils/style.dart';
 import 'package:ovorideuser/core/utils/util.dart';
 import 'package:ovorideuser/data/controller/ride/ride_bid_list/ride_bid_list_controller.dart';
-import 'package:ovorideuser/data/model/global/bid/bid_model.dart';
 import 'package:ovorideuser/data/model/global/app/ride_model.dart';
+import 'package:ovorideuser/data/model/global/bid/bid_model.dart';
 import 'package:ovorideuser/presentation/components/buttons/custom_elevated_button.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:ovorideuser/presentation/components/image/my_network_image_widget.dart';
 
 import '../../../components/divider/custom_spacer.dart';

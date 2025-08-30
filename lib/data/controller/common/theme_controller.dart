@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ovorideuser/core/helper/shared_preference_helper.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeController extends GetxController implements GetxService {
   final SharedPreferences sharedPreferences;

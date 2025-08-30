@@ -2,12 +2,12 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_icons.dart';
 import 'package:ovorideuser/core/utils/util.dart';
 import 'package:ovorideuser/presentation/components/buttons/circle_icon_button.dart';
-import 'package:get/get.dart';
 import 'package:ovorideuser/presentation/components/image/my_network_image_widget.dart';
 
 class AttachmentPreviewWidget extends StatelessWidget {
