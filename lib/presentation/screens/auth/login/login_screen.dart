@@ -105,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           spaceDown(Dimensions.space20),
-                          SocialAuthSection(),
+                          // SocialAuthSection(),
                           Form(
                             key: formKey,
                             child: Column(

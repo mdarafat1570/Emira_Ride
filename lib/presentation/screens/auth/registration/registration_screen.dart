@@ -126,9 +126,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                                       ),
                                     ),
                                     spaceDown(Dimensions.space20),
-                                    SocialAuthSection(
-                                      googleAuthTitle: MyStrings.regGoogle,
-                                    ),
+                                    // SocialAuthSection(
+                                    //   googleAuthTitle: MyStrings.regGoogle,
+                                    // ),
                                     spaceDown(Dimensions.space15),
                                     const RegistrationForm(),
                                   ],
