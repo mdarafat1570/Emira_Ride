@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     super.initState();
 
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      controller.initialData(shouldLoad: controller.appServices.isEmpty);
+      controller.initialData(shouldLoad: controller.appServices.isEmpty, context: context);
     });
   }
 
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               color: MyColor.primaryColor,
               backgroundColor: MyColor.colorWhite,
               onRefresh: () async {
-                controller.initialData(shouldLoad: true);
+                controller.initialData(shouldLoad: true, context: context);
               },
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),

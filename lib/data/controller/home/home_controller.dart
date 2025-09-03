@@ -66,7 +66,7 @@ class HomeController extends GetxController {
   }
 
   GeneralSettingResponseModel generalSettingResponseModel = GeneralSettingResponseModel();
-  Future<void> initialData({bool shouldLoad = true}) async {
+  Future<void> initialData({bool shouldLoad = true, required BuildContext context}) async {
     isLoading = shouldLoad;
     defaultCurrency = homeRepo.apiClient.getCurrency();
     defaultCurrencySymbol = homeRepo.apiClient.getCurrency(isSymbol: true);
@@ -74,7 +74,7 @@ class HomeController extends GetxController {
     email = homeRepo.apiClient.getUserEmail();
     generalSettingResponseModel = homeRepo.apiClient.getGeneralSettings();
     minimumDistance = double.tryParse(homeRepo.apiClient.getMinimumRideDistance()) ?? 0.0;
-    bool t = await appLocationController.checkPermission();
+    bool t = await appLocationController.checkPermission(context);
     if (t == true) {
       currentPosition = await appLocationController.getCurrentPosition();
       currentAddress = appLocationController.currentAddress;

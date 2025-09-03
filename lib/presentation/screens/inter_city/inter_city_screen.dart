@@ -35,7 +35,7 @@ class _InterCityScreenState extends State<InterCityScreen> with SingleTickerProv
     );
 
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      controller.initialData(shouldLoad: controller.appServices.isEmpty);
+      controller.initialData(shouldLoad: controller.appServices.isEmpty, context: context);
     });
   }
 
@@ -70,7 +70,7 @@ class _InterCityScreenState extends State<InterCityScreen> with SingleTickerProv
               color: MyColor.primaryColor,
               backgroundColor: MyColor.colorWhite,
               onRefresh: () async {
-                controller.initialData(shouldLoad: true);
+                controller.initialData(shouldLoad: true, context: context);
               },
               child: SingleChildScrollView(
                 physics: const BouncingScrollPhysics(),
