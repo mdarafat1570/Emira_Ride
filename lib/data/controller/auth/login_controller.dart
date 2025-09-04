@@ -19,8 +19,8 @@ class LoginController extends GetxController {
   final FocusNode passwordFocusNode = FocusNode();
 
   TextEditingController mobileNumberController = TextEditingController();
-  TextEditingController emailController = TextEditingController(text: "khanarafat1570@gmail.com");
-  TextEditingController passwordController = TextEditingController(text: "12345678");
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   String? email;
   String? password;
