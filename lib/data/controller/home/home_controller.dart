@@ -108,7 +108,7 @@ class HomeController extends GetxController {
     try {
       printX('Starting location permission check...');
       bool permissionGranted = await appLocationController.checkPermission(context);
-      printX('✅ Permission granted: $permissionGranted');
+      printX('Permission granted: $permissionGranted');
 
       if (permissionGranted) {
         printX('Getting current position...');
