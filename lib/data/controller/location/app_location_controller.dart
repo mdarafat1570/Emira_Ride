@@ -70,8 +70,6 @@
 //     return null;
 //   }
 // }
-
-
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
@@ -79,7 +77,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/style.dart';
-import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/core/utils/util.dart';
 import 'package:ovorideuser/presentation/components/snack_bar/show_custom_snackbar.dart';
 
@@ -90,8 +87,46 @@ class AppLocationController extends GetxController {
   String currentAddress = "Loading...";
 
   Future<bool> checkPermission(BuildContext context) async {
-    // 1️⃣ First show custom dialog
-    await showDialog(
+    var status = await Geolocator.checkPermission();
+
+    if (status == LocationPermission.whileInUse || status == LocationPermission.always) {
+      await getCurrentPosition();
+      return true;
+    }
+
+    if (status == LocationPermission.deniedForever) {
+      await _showSettingsDialog(context);
+      return false;
+    }
+
+    bool? userAccepted = await _showLocationPermissionDialog(context);
+
+    if (userAccepted == true) {
+      var requestStatus = await Geolocator.requestPermission();
+
+      if (requestStatus == LocationPermission.whileInUse ||
+          requestStatus == LocationPermission.always) {
+        await getCurrentPosition();
+        return true;
+      } else if (requestStatus == LocationPermission.deniedForever) {
+        CustomSnackBar.error(
+          errorList: [
+            "Location permission is permanently denied. Please enable it from settings.",
+          ],
+        );
+      } else {
+        CustomSnackBar.error(errorList: ["Please enable location permission"]);
+      }
+    } else {
+      CustomSnackBar.error(errorList: ["Location access is required for better service"]);
+    }
+
+    return false;
+  }
+
+  /// Show location permission request dialog
+  Future<bool?> _showLocationPermissionDialog(BuildContext context) async {
+    return await showDialog<bool>(
       context: context,
       barrierDismissible: false,
       builder: (BuildContext context) {
@@ -157,27 +192,54 @@ class AppLocationController extends GetxController {
                 ),
                 const SizedBox(height: 24),
 
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pop(true); // ✅ return allow
-                    },
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 14),
-                      backgroundColor: MyColor.primaryColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
+                Row(
+                  children: [
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(false);
+                        },
+                        style: OutlinedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          side: BorderSide(color: Colors.grey[400]!),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        child: Text(
+                          "Not Now",
+                          style: boldSmall.copyWith(
+                            color: Colors.grey[600],
+                            fontSize: 14,
+                          ),
+                        ),
                       ),
                     ),
-                    child: Text(
-                      "Allow Location Access",
-                      style: boldSmall.copyWith(
-                        color: Colors.white,
-                        fontSize: 16,
+                    const SizedBox(width: 12),
+                    // Allow Button
+                    Expanded(
+                      flex: 2,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pop(true);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          backgroundColor: MyColor.primaryColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        child: Text(
+                          "Allow Location",
+                          style: boldSmall.copyWith(
+                            color: Colors.white,
+                            fontSize: 14,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
                 ),
               ],
             ),
@@ -185,67 +247,172 @@ class AppLocationController extends GetxController {
         );
       },
     );
-
-    // 2️⃣ After dialog close, actually request permission
-    var status = await Geolocator.checkPermission();
-
-    if (status == LocationPermission.denied) {
-      var requestStatus = await Geolocator.requestPermission();
-      if (requestStatus == LocationPermission.whileInUse ||
-          requestStatus == LocationPermission.always) {
-        getCurrentPosition();
-      } else {
-        CustomSnackBar.error(errorList: ["Please enable location permission"]);
-      }
-    } else if (status == LocationPermission.deniedForever) {
-      CustomSnackBar.error(
-        errorList: [
-          "Location permission is permanently denied. Please enable it from settings.",
-        ],
-      );
-      if (Platform.isAndroid) {
-        await Geolocator.requestPermission();
-        // or openAppSettings();
-      }
-    } else if (status == LocationPermission.whileInUse ||
-        status == LocationPermission.always) {
-      getCurrentPosition();
-    }
-
-    return true;
   }
 
+  /// Show settings dialog for permanently denied permission
+  Future<void> _showSettingsDialog(BuildContext context) async {
+    return await showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(
+                  Icons.settings,
+                  color: Colors.orange,
+                  size: 36,
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  "Location Permission Required",
+                  style: boldLarge,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  "Location access has been permanently denied. Please enable it manually in your device settings to continue.",
+                  style: boldSmall.copyWith(fontSize: 14, height: 1.4),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  children: [
+                    Expanded(
+                      child: OutlinedButton(
+                        onPressed: () => Navigator.of(context).pop(),
+                        child: const Text("Cancel"),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                          Geolocator.openAppSettings();
+                        },
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: MyColor.primaryColor,
+                        ),
+                        child: const Text("Open Settings"),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 
-  /// 🔹 Get current position + address
+  /// Get current position + address
   Future<Position?> getCurrentPosition() async {
     try {
+      printX('Starting location request...');
+
+      bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+      printX('Location services enabled: $serviceEnabled');
+
+      if (!serviceEnabled) {
+        CustomSnackBar.error(
+          errorList: ["Location services are disabled. Please enable them in your device settings."],
+        );
+        return null;
+      }
+
+      LocationPermission permission = await Geolocator.checkPermission();
+      printX('Current permission status: $permission');
+
+      if (permission == LocationPermission.denied || permission == LocationPermission.deniedForever) {
+        CustomSnackBar.error(
+          errorList: ["Location permission is required. Please enable it."],
+        );
+        return null;
+      }
+
+      printX('Getting current position...');
+
       currentPosition = await Geolocator.getCurrentPosition(
-        locationSettings:
-        const LocationSettings(accuracy: LocationAccuracy.best),
+        locationSettings: LocationSettings(
+          accuracy: LocationAccuracy.high,
+          distanceFilter: 0,
+          timeLimit: const Duration(seconds: 15), // Increased timeout
+        ),
       );
 
-      final placemarks = await placemarkFromCoordinates(
-        currentPosition.latitude,
-        currentPosition.longitude,
-      );
+      printX('Position obtained: ${currentPosition.latitude}, ${currentPosition.longitude}');
 
-      currentAddress =
-      "${placemarks[0].street} ${placemarks[0].subThoroughfare} ${placemarks[0].thoroughfare}, ${placemarks[0].locality}, ${placemarks[0].country}";
-      update();
+      try {
+        printX('Getting address from coordinates...');
+        final placemarks = await placemarkFromCoordinates(
+          currentPosition.latitude,
+          currentPosition.longitude,
+        );
 
-      printX('📍 Current position: $currentAddress');
-      return currentPosition;
-    } catch (e) {
-      CustomSnackBar.error(
-        errorList: [MyStrings.locationPermissionPermanentDenied],
-      );
-      Future.delayed(const Duration(seconds: 2), () {
-        if (Platform.isAndroid) {
-          Geolocator.requestPermission();
+        if (placemarks.isNotEmpty) {
+          final place = placemarks[0];
+          List<String> addressParts = [];
+
+          if (place.street?.isNotEmpty == true) addressParts.add(place.street!);
+          if (place.subThoroughfare?.isNotEmpty == true) addressParts.add(place.subThoroughfare!);
+          if (place.thoroughfare?.isNotEmpty == true) addressParts.add(place.thoroughfare!);
+          if (place.locality?.isNotEmpty == true) addressParts.add(place.locality!);
+          if (place.country?.isNotEmpty == true) addressParts.add(place.country!);
+
+          currentAddress = addressParts.isNotEmpty
+              ? addressParts.join(', ')
+              : "Location found (${currentPosition.latitude.toStringAsFixed(4)}, ${currentPosition.longitude.toStringAsFixed(4)})";
+
+          printX('Address resolved: $currentAddress');
+        } else {
+          currentAddress = "Location found (${currentPosition.latitude.toStringAsFixed(4)}, ${currentPosition.longitude.toStringAsFixed(4)})";
+          printX('No placemarks found, using coordinates');
         }
-      });
+      } catch (addressError) {
+        printX('Address resolution failed: $addressError');
+        currentAddress = "Location found (${currentPosition.latitude.toStringAsFixed(4)}, ${currentPosition.longitude.toStringAsFixed(4)})";
+      }
+
+      update();
+      printX('Location update completed: $currentAddress');
+      return currentPosition;
+
+    } catch (e) {
+      printX('Location error details: $e');
+
+      String errorMessage = "Failed to get current location.";
+
+      if (e.toString().contains('timeout')) {
+        errorMessage = "Location request timed out. Please try again.";
+      } else if (e.toString().contains('network')) {
+        errorMessage = "Network error while getting location. Check your internet connection.";
+      } else if (e.toString().contains('permission')) {
+        errorMessage = "Location permission denied. Please enable it in settings.";
+      } else if (e.toString().contains('disabled')) {
+        errorMessage = "Location services are disabled. Please enable them.";
+      }
+
+      CustomSnackBar.error(errorList: [errorMessage]);
     }
     return null;
   }
-}
 
+  /// Refresh location manually
+  Future<void> refreshLocation() async {
+    currentAddress = "Loading...";
+    update();
+    await getCurrentPosition();
+  }
+}

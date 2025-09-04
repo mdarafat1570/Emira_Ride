@@ -66,6 +66,35 @@ class HomeController extends GetxController {
   }
 
   GeneralSettingResponseModel generalSettingResponseModel = GeneralSettingResponseModel();
+  // Future<void> initialData({bool shouldLoad = true, required BuildContext context}) async {
+  //   isLoading = shouldLoad;
+  //   defaultCurrency = homeRepo.apiClient.getCurrency();
+  //   defaultCurrencySymbol = homeRepo.apiClient.getCurrency(isSymbol: true);
+  //   username = homeRepo.apiClient.getUserName();
+  //   email = homeRepo.apiClient.getUserEmail();
+  //   generalSettingResponseModel = homeRepo.apiClient.getGeneralSettings();
+  //   minimumDistance = double.tryParse(homeRepo.apiClient.getMinimumRideDistance()) ?? 0.0;
+  //   bool t = await appLocationController.checkPermission(context);
+  //   if (t == true) {
+  //     currentPosition = await appLocationController.getCurrentPosition();
+  //     currentAddress = appLocationController.currentAddress;
+  //     SelectedLocationInfo l = SelectedLocationInfo(
+  //       address: currentAddress,
+  //       fullAddress: currentAddress,
+  //       latitude: appLocationController.currentPosition.latitude,
+  //       longitude: appLocationController.currentPosition.longitude,
+  //     );
+  //     addLocationAtIndex(l, 0);
+  //   }
+  //   loggerX("selectedLocations.length ${selectedLocations.length}");
+  //   await loadData(shouldLoad: shouldLoad);
+  //   isLoading = false;
+  //   update();
+  // }
+
+
+  // Replace this part in your HomeController.initialData() method:
+
   Future<void> initialData({bool shouldLoad = true, required BuildContext context}) async {
     isLoading = shouldLoad;
     defaultCurrency = homeRepo.apiClient.getCurrency();
@@ -74,24 +103,61 @@ class HomeController extends GetxController {
     email = homeRepo.apiClient.getUserEmail();
     generalSettingResponseModel = homeRepo.apiClient.getGeneralSettings();
     minimumDistance = double.tryParse(homeRepo.apiClient.getMinimumRideDistance()) ?? 0.0;
-    bool t = await appLocationController.checkPermission(context);
-    if (t == true) {
-      currentPosition = await appLocationController.getCurrentPosition();
-      currentAddress = appLocationController.currentAddress;
-      SelectedLocationInfo l = SelectedLocationInfo(
-        address: currentAddress,
-        fullAddress: currentAddress,
-        latitude: appLocationController.currentPosition.latitude,
-        longitude: appLocationController.currentPosition.longitude,
-      );
-      addLocationAtIndex(l, 0);
+
+    // Try to get location with better error handling
+    try {
+      printX('Starting location permission check...');
+      bool permissionGranted = await appLocationController.checkPermission(context);
+      printX('✅ Permission granted: $permissionGranted');
+
+      if (permissionGranted) {
+        printX('Getting current position...');
+        currentPosition = await appLocationController.getCurrentPosition();
+
+        if (currentPosition != null) {
+          currentAddress = appLocationController.currentAddress;
+          printX('Location obtained: $currentAddress');
+
+          SelectedLocationInfo locationInfo = SelectedLocationInfo(
+            address: currentAddress,
+            fullAddress: currentAddress,
+            latitude: appLocationController.currentPosition.latitude,
+            longitude: appLocationController.currentPosition.longitude,
+          );
+          addLocationAtIndex(locationInfo, 0);
+          printX('Location added to selectedLocations');
+        } else {
+          printX('⚠Position is null, using default location');
+          _useDefaultLocation();
+        }
+      } else {
+        printX('⚠Permission denied, using default location');
+        _useDefaultLocation();
+      }
+    } catch (e) {
+      printX('Location initialization error: $e');
+      _useDefaultLocation();
     }
+
     loggerX("selectedLocations.length ${selectedLocations.length}");
     await loadData(shouldLoad: shouldLoad);
     isLoading = false;
     update();
   }
 
+  void _useDefaultLocation() {
+    currentAddress = "Default Location";
+    currentPosition = MyUtils.getDefaultPosition();
+
+    SelectedLocationInfo defaultLocationInfo = SelectedLocationInfo(
+      address: currentAddress,
+      fullAddress: currentAddress,
+      latitude: currentPosition!.latitude,
+      longitude: currentPosition!.longitude,
+    );
+    addLocationAtIndex(defaultLocationInfo, 0);
+    printX('Using default location as fallback');
+  }
   Future<void> loadData({bool shouldLoad = true}) async {
     isLoading = shouldLoad;
     update();
