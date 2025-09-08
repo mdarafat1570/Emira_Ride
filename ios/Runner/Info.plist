@@ -52,8 +52,6 @@
     <string>We use your photo library so you can choose profile pictures or upload ride documents.</string>
     <key>NSPhotoLibraryAddUsageDescription</key>
     <string>We need this to save receipts or documents to your photo library.</string>
-    <key>NSUserTrackingUsageDescription</key>
-    <string>We use your data to deliver personalized ride offers and improve app experience. Your data is never sold.</string>
     <key>NSCameraUsageDescription</key>
     <string>We use your camera to let you upload profile pictures and verify ride documents.</string>
     <key>CADisableMinimumFrameDurationOnPhone</key>
