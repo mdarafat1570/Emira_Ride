@@ -70,7 +70,6 @@
 //     return null;
 //   }
 // }
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
@@ -231,7 +230,7 @@ class AppLocationController extends GetxController {
                           ),
                         ),
                         child: Text(
-                          "Allow Location",
+                          "Continue",
                           style: boldSmall.copyWith(
                             color: Colors.white,
                             fontSize: 14,

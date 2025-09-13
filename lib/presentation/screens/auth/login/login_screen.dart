@@ -16,7 +16,6 @@ import 'package:ovorideuser/presentation/components/image/custom_svg_picture.dar
 import 'package:ovorideuser/presentation/components/text-form-field/custom_text_field.dart';
 import 'package:ovorideuser/presentation/components/text/default_text.dart';
 import 'package:ovorideuser/presentation/components/will_pop_widget.dart';
-import 'package:ovorideuser/presentation/screens/auth/social_auth/social_auth_section.dart';
 
 import '../../../../core/utils/my_images.dart';
 import '../../../components/divider/custom_spacer.dart';

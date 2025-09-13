@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/date_converter.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/utils/app_status.dart';
@@ -8,8 +10,6 @@ import 'package:ovorideuser/core/utils/style.dart';
 import 'package:ovorideuser/core/utils/util.dart';
 import 'package:ovorideuser/data/model/global/app/ride_model.dart';
 import 'package:ovorideuser/presentation/components/buttons/rounded_button.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../../core/utils/my_icons.dart';
 import '../../../components/divider/custom_spacer.dart';

@@ -1,17 +1,17 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/shared_preference_helper.dart';
 import 'package:ovorideuser/core/route/route.dart';
 import 'package:ovorideuser/core/utils/style.dart';
 import 'package:ovorideuser/data/services/api_client.dart';
 import 'package:ovorideuser/presentation/components/buttons/rounded_button.dart';
 import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:get/get.dart';
+
 import '../../../core/utils/dimensions.dart';
 import '../../../core/utils/my_color.dart';
 import '../../../core/utils/my_images.dart';
 import '../../../core/utils/my_strings.dart';
-
 import 'intro-screen-widgets/onboard_body.dart';
 
 class OnBoardIntroScreen extends StatefulWidget {

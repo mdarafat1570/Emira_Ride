@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
@@ -9,7 +10,6 @@ import 'package:ovorideuser/presentation/components/custom_loader/custom_loader.
 import 'package:ovorideuser/presentation/components/no_data.dart';
 import 'package:ovorideuser/presentation/components/shimmer/transaction_card_shimmer.dart';
 import 'package:ovorideuser/presentation/screens/payment_history/widget/custom_payment_card.dart';
-import 'package:get/get.dart';
 
 class PaymentHistoryScreen extends StatefulWidget {
   const PaymentHistoryScreen({super.key});

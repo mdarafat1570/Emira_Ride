@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:ovorideuser/core/route/route.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
-import 'package:ovorideuser/core/utils/my_icons.dart';
 import 'package:ovorideuser/core/utils/my_images.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/core/utils/style.dart';
@@ -16,7 +14,6 @@ import 'package:ovorideuser/presentation/components/custom_loader/custom_loader.
 import 'package:ovorideuser/presentation/components/custom_no_data_found_class.dart';
 import 'package:ovorideuser/presentation/components/will_pop_widget.dart';
 import 'package:ovorideuser/presentation/screens/auth/registration/widget/registration_form.dart';
-import 'package:ovorideuser/presentation/screens/auth/social_auth/social_auth_section.dart';
 
 import '../../../components/divider/custom_spacer.dart';
 

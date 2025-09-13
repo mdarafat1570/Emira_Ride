@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/utils/app_status.dart';
@@ -8,7 +9,6 @@ import 'package:ovorideuser/data/repo/ride/ride_repo.dart';
 import 'package:ovorideuser/presentation/components/no_data.dart';
 import 'package:ovorideuser/presentation/components/shimmer/ride_shimmer.dart';
 import 'package:ovorideuser/presentation/screens/ride/widget/active_ride_card.dart';
-import 'package:flutter/material.dart';
 
 import '../../../../core/utils/dimensions.dart';
 

@@ -1,12 +1,13 @@
+import 'dart:convert';
+
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/shared_preference_helper.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
-import 'dart:convert';
 import 'package:ovorideuser/core/route/route.dart';
 import 'package:ovorideuser/data/model/global/pusher/pusher_event_response_model.dart';
+import 'package:ovorideuser/data/services/api_client.dart';
 import 'package:ovorideuser/data/services/pusher_service.dart';
 import 'package:pusher_channels_flutter/pusher_channels_flutter.dart';
-import 'package:get/get.dart';
-import 'package:ovorideuser/data/services/api_client.dart';
 
 class GlobalPusherController extends GetxController {
   ApiClient apiClient;
