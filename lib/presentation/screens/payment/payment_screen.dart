@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/route/route.dart';
 import 'package:ovorideuser/core/utils/app_status.dart';
@@ -20,10 +24,6 @@ import 'package:ovorideuser/presentation/components/image/my_network_image_widge
 import 'package:ovorideuser/presentation/screens/coupon/widget/coupon_widget.dart';
 import 'package:ovorideuser/presentation/screens/payment/widget/payment_bottom_sheet.dart';
 import 'package:ovorideuser/presentation/screens/payment/widget/payment_ride_details_card.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:ovorideuser/presentation/screens/payment/widget/tips_bottom_sheet_body.dart';
 
 class PaymentScreen extends StatefulWidget {

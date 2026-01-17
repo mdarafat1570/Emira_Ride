@@ -1,23 +1,14 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
 import 'package:lottie/lottie.dart';
-
 import 'package:ovorideuser/core/utils/my_color.dart';
-
 import 'package:ovorideuser/core/utils/my_images.dart';
-
 import 'package:ovorideuser/core/utils/my_strings.dart';
-
 import 'package:ovorideuser/core/utils/style.dart';
-
 import 'package:ovorideuser/presentation/components/buttons/custom_round_border_shape.dart';
 
 import '../../core/utils/dimensions.dart';
-
 import 'image/custom_svg_picture.dart';
 
 class NoDataOrInternetScreen extends StatefulWidget {

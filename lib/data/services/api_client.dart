@@ -12,8 +12,8 @@ import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/data/model/authorization/authorization_response_model.dart';
 import 'package:ovorideuser/data/model/global/response_model/response_model.dart';
 import 'package:ovorideuser/data/model/global/response_model/unverified_response_model.dart';
-import 'package:ovorideuser/environment.dart';
 import 'package:ovorideuser/data/services/local_storage_service.dart';
+import 'package:ovorideuser/environment.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiClient extends LocalStorageService {

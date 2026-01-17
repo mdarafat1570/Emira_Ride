@@ -1,6 +1,5 @@
 import 'dart:typed_data';
 
-import 'package:ovorideuser/presentation/packages/flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -9,6 +8,7 @@ import 'package:ovorideuser/core/utils/helper.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_images.dart';
 import 'package:ovorideuser/environment.dart';
+import 'package:ovorideuser/presentation/packages/flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:ovorideuser/presentation/packages/polyline_animation/polyline_animation_v1.dart';
 
 class RideMapController extends GetxController {

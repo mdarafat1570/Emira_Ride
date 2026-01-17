@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
@@ -9,8 +11,6 @@ import 'package:ovorideuser/presentation/components/buttons/rounded_button.dart'
 import 'package:ovorideuser/presentation/components/snack_bar/show_custom_snackbar.dart';
 import 'package:ovorideuser/presentation/components/text-form-field/custom_text_field.dart';
 import 'package:ovorideuser/presentation/screens/coupon/widget/coupon_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CouponScreen extends StatefulWidget {
   const CouponScreen({super.key});

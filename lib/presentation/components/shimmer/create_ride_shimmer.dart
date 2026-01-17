@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/util.dart';
-
 import 'package:ovorideuser/presentation/components/shimmer/my_shimmer.dart';
 
 class CreateRideShimmer extends StatelessWidget {

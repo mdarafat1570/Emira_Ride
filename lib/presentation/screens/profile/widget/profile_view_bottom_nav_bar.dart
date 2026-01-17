@@ -1,7 +1,7 @@
-import 'package:ovorideuser/core/route/route.dart';
-import 'package:ovorideuser/core/utils/style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ovorideuser/core/route/route.dart';
+import 'package:ovorideuser/core/utils/style.dart';
 
 import '../../../../../core/utils/dimensions.dart';
 import '../../../../../core/utils/my_color.dart';

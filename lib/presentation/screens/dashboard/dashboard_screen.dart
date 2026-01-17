@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_icons.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/data/controller/account/profile_controller.dart';
@@ -10,13 +11,12 @@ import 'package:ovorideuser/data/repo/auth/general_setting_repo.dart';
 import 'package:ovorideuser/data/repo/menu_repo/menu_repo.dart';
 import 'package:ovorideuser/presentation/components/annotated_region/annotated_region_widget.dart';
 import 'package:ovorideuser/presentation/components/image/custom_svg_picture.dart';
-import 'package:ovorideuser/presentation/screens/home/home_screen.dart';
-import 'package:ovorideuser/presentation/screens/profile_and_settings/profile_and_settings_screen.dart';
-import 'package:ovorideuser/presentation/screens/web_view/scheduled_web_page_loader.dart';
-import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/presentation/components/will_pop_widget.dart';
 import 'package:ovorideuser/presentation/screens/drawer/drawer_screen.dart';
+import 'package:ovorideuser/presentation/screens/home/home_screen.dart';
 import 'package:ovorideuser/presentation/screens/inter_city/inter_city_screen.dart';
+import 'package:ovorideuser/presentation/screens/profile_and_settings/profile_and_settings_screen.dart';
+import 'package:ovorideuser/presentation/screens/web_view/scheduled_web_page_loader.dart';
 
 // This is a custom widget created to match the design of the first code snippet's navigation item.
 class NavBarItem extends StatelessWidget {

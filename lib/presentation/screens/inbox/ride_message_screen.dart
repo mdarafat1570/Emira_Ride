@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:ovorideuser/core/route/route.dart';
 import 'package:ovorideuser/core/utils/app_status.dart';
@@ -15,8 +17,6 @@ import 'package:ovorideuser/presentation/components/annotated_region/annotated_r
 import 'package:ovorideuser/presentation/components/custom_loader/custom_loader.dart';
 import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
 import 'package:ovorideuser/presentation/components/image/my_local_image_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:ovorideuser/presentation/components/image/my_network_image_widget.dart';
 import 'package:ovorideuser/presentation/components/text/header_text.dart';
 

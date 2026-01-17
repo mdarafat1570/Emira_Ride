@@ -1,5 +1,5 @@
-import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:flutter/material.dart';
+import 'package:ovorideuser/core/utils/my_color.dart';
 
 class DottedLine extends StatelessWidget {
   final double width;

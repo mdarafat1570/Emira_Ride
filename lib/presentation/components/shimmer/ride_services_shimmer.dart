@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
-
 import 'package:ovorideuser/presentation/components/shimmer/my_shimmer.dart';
 
 class RideServiceShimmer extends StatelessWidget {

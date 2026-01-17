@@ -1,15 +1,15 @@
-import 'package:ovorideuser/core/helper/string_format_helper.dart';
-import 'package:ovorideuser/presentation/components/annotated_region/annotated_region_widget.dart';
-import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/data/controller/account/profile_controller.dart';
 import 'package:ovorideuser/data/repo/account/profile_repo.dart';
+import 'package:ovorideuser/presentation/components/annotated_region/annotated_region_widget.dart';
 import 'package:ovorideuser/presentation/components/app-bar/custom_appbar.dart';
 import 'package:ovorideuser/presentation/components/custom_loader/custom_loader.dart';
+import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
 
 import '../../components/card/app_body_card.dart';
 import '../../components/divider/custom_divider.dart';

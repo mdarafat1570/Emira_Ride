@@ -1,11 +1,10 @@
-import 'package:flutter_svg/svg.dart';
-import 'package:ovorideuser/core/utils/my_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:ovorideuser/core/route/route.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
+import 'package:ovorideuser/core/utils/my_icons.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/core/utils/style.dart';
 import 'package:ovorideuser/data/controller/auth/login_controller.dart';
@@ -17,7 +16,6 @@ import 'package:ovorideuser/presentation/components/image/custom_svg_picture.dar
 import 'package:ovorideuser/presentation/components/text-form-field/custom_text_field.dart';
 import 'package:ovorideuser/presentation/components/text/default_text.dart';
 import 'package:ovorideuser/presentation/components/will_pop_widget.dart';
-import 'package:ovorideuser/presentation/screens/auth/social_auth/social_auth_section.dart';
 
 import '../../../../core/utils/my_images.dart';
 import '../../../components/divider/custom_spacer.dart';
@@ -45,6 +43,117 @@ class _LoginScreenState extends State<LoginScreen> {
       Get.find<LoginController>().remember = false;
     });
   }
+
+  void showLocationPermissionDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          elevation: 0,
+          backgroundColor: Colors.transparent,
+          child: Container(
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 10.0,
+                  offset: const Offset(0.0, 10.0),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                // Icon
+                Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: const BoxDecoration(
+                    color: Colors.black12,
+                    shape: BoxShape.circle,
+                  ),
+                  child: const Icon(
+                    Icons.location_on,
+                    color: Colors.green,
+                    size: 36,
+                  ),
+                ),
+                const SizedBox(height: 16),
+
+                // Title
+                Text(
+                  "Location Access Required",
+                  style: boldLarge,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 16),
+
+                // Main message
+                Text(
+                  "To give you the best riding experience, this app needs access to your location.\n\n"
+                      "📍 Accurate pickup and drop-off\n"
+                      "🛵 Real-time ride tracking\n"
+                      "✅ Better and safer service",
+                  style: boldLarge.copyWith(
+                    fontSize: 14,
+                    height: 1.5,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 12),
+
+                // Privacy note
+                Text(
+                  "Your location will only be used for ride-related services and never shared without your permission.",
+                  style: boldSmall.copyWith(
+                    fontSize: 12,
+                    color: Colors.grey[600],
+                    fontStyle: FontStyle.italic,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 24),
+
+                // Allow button
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                      // 🔑 Call location permission request here
+                    },
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      backgroundColor: MyColor.primaryColor,
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: Text(
+                      "Allow Location Access",
+                      style: boldSmall.copyWith(
+                        color: Colors.white,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
 
   @override
   void dispose() {
@@ -106,7 +215,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                           ),
                           spaceDown(Dimensions.space20),
-                          SocialAuthSection(),
+                          // SocialAuthSection(),
                           Form(
                             key: formKey,
                             child: Column(

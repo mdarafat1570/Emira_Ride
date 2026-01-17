@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
@@ -13,7 +14,6 @@ import 'package:ovorideuser/presentation/components/shimmer/transaction_card_shi
 import 'package:ovorideuser/presentation/screens/ride_bid_list/widget/bid_card.dart';
 import 'package:ovorideuser/presentation/screens/ride_bid_list/widget/cancel_bottom_sheet.dart';
 import 'package:ovorideuser/presentation/screens/ride_bid_list/widget/ride_details_card.dart';
-import 'package:flutter/material.dart';
 
 class RideBidListScreen extends StatefulWidget {
   const RideBidListScreen({super.key});

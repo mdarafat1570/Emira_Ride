@@ -1,20 +1,21 @@
+import 'dart:convert';
+
+import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ovorideuser/core/helper/shared_preference_helper.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
-import 'dart:convert';
 import 'package:ovorideuser/core/route/route.dart';
 import 'package:ovorideuser/core/utils/app_status.dart';
 import 'package:ovorideuser/core/utils/audio_utils.dart';
 import 'package:ovorideuser/core/utils/util.dart';
 import 'package:ovorideuser/data/controller/ride/ride_details/ride_details_controller.dart';
+import 'package:ovorideuser/data/controller/ride/ride_meassage/ride_meassage_controller.dart';
 import 'package:ovorideuser/data/model/general_setting/general_setting_response_model.dart';
 import 'package:ovorideuser/data/model/global/pusher/pusher_event_response_model.dart';
+import 'package:ovorideuser/data/services/api_client.dart';
 import 'package:ovorideuser/data/services/pusher_service.dart';
 import 'package:ovorideuser/presentation/components/snack_bar/show_custom_bid_toast.dart';
 import 'package:pusher_channels_flutter/pusher_channels_flutter.dart';
-import 'package:get/get.dart';
-import 'package:ovorideuser/data/controller/ride/ride_meassage/ride_meassage_controller.dart';
-import 'package:ovorideuser/data/services/api_client.dart';
 
 class PusherRideController extends GetxController {
   ApiClient apiClient;

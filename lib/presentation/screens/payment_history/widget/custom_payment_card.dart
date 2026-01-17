@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/date_converter.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/utils/style.dart';
 import 'package:ovorideuser/core/utils/util.dart';
 import 'package:ovorideuser/presentation/components/divider/custom_divider.dart';
-import 'package:get/get.dart';
 import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
 
 import '../../../../core/utils/dimensions.dart';

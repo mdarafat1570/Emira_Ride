@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
@@ -10,6 +9,7 @@ import 'package:ovorideuser/data/repo/auth/login_repo.dart';
 import 'package:ovorideuser/presentation/components/app-bar/custom_appbar.dart';
 import 'package:ovorideuser/presentation/components/buttons/rounded_button.dart';
 import 'package:ovorideuser/presentation/components/text/default_text.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
 class VerifyForgetPassScreen extends StatefulWidget {
   const VerifyForgetPassScreen({super.key});

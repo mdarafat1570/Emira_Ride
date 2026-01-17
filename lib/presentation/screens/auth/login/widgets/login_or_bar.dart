@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/core/utils/style.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class LoginOrBar extends StatelessWidget {
   final double stock;

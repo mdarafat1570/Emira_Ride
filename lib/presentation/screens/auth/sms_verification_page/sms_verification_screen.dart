@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:ovorideuser/core/utils/my_icons.dart';
-import 'package:ovorideuser/core/utils/util.dart';
-import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
-import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:ovorideuser/core/route/route.dart';
 import 'package:ovorideuser/core/utils/dimensions.dart';
 import 'package:ovorideuser/core/utils/my_color.dart';
+import 'package:ovorideuser/core/utils/my_icons.dart';
 import 'package:ovorideuser/core/utils/my_images.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/core/utils/style.dart';
+import 'package:ovorideuser/core/utils/util.dart';
 import 'package:ovorideuser/data/controller/auth/auth/sms_verification_controler.dart';
 import 'package:ovorideuser/data/repo/auth/sms_email_verification_repo.dart';
 import 'package:ovorideuser/presentation/components/buttons/rounded_button.dart';
+import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
 import 'package:ovorideuser/presentation/components/will_pop_widget.dart';
+import 'package:pin_code_fields/pin_code_fields.dart';
 
 class SmsVerificationScreen extends StatefulWidget {
   const SmsVerificationScreen({super.key});

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 import 'package:ovorideuser/core/helper/string_format_helper.dart';
 import 'package:ovorideuser/core/route/route.dart';
@@ -22,7 +23,6 @@ import 'package:ovorideuser/presentation/screens/location/widgets/ride_cancel_bo
 import 'package:ovorideuser/presentation/screens/location/widgets/ride_details_review_bottom_sheet.dart';
 import 'package:ovorideuser/presentation/screens/location/widgets/ride_otp_widget.dart';
 import 'package:ovorideuser/presentation/screens/location/widgets/ride_sos_bottom_sheet_body.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class RideDetailsMapWidget extends StatelessWidget {
   final ScrollController scrollController;

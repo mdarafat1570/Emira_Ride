@@ -6,9 +6,9 @@ import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/core/utils/url_container.dart';
 import 'package:ovorideuser/data/model/authorization/authorization_response_model.dart';
 import 'package:ovorideuser/data/model/bid/bid_list_response_model.dart';
+import 'package:ovorideuser/data/model/global/app/ride_model.dart';
 import 'package:ovorideuser/data/model/global/bid/bid_model.dart';
 import 'package:ovorideuser/data/model/global/response_model/response_model.dart';
-import 'package:ovorideuser/data/model/global/app/ride_model.dart';
 import 'package:ovorideuser/data/repo/ride/ride_repo.dart';
 import 'package:ovorideuser/presentation/components/snack_bar/show_custom_snackbar.dart';
 
