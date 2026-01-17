@@ -18,7 +18,7 @@
         </intent>
     </queries>
     <application
-        android:label="Emira Rider"
+        android:label="NMC"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true"

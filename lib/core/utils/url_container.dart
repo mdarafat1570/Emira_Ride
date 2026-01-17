@@ -1,5 +1,5 @@
 class UrlContainer {
-  static const String domainUrl = 'https://emiraride.com';
+  static const String domainUrl = 'https://nmc24.com';
 
   static const String baseUrl = '$domainUrl/api/';
   static const String dashBoardEndPoint = 'dashboard';
