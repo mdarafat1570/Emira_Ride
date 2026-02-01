@@ -16,6 +16,7 @@ import 'package:ovorideuser/presentation/screens/drawer/drawer_screen.dart';
 import 'package:ovorideuser/presentation/screens/home/home_screen.dart';
 import 'package:ovorideuser/presentation/screens/inter_city/inter_city_screen.dart';
 import 'package:ovorideuser/presentation/screens/profile_and_settings/profile_and_settings_screen.dart';
+import 'package:ovorideuser/presentation/screens/web_view/new_settings_webview/all_web_view_page.dart';
 import 'package:ovorideuser/presentation/screens/web_view/scheduled_web_page_loader.dart';
 
 // This is a custom widget created to match the design of the first code snippet's navigation item.
@@ -92,10 +93,12 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
 
     final pusherController = Get.put(GlobalPusherController(apiClient: Get.find()));
     _dashBoardScaffoldKey = GlobalKey<ScaffoldState>();
+    
 
     _widgets = <Widget>[
       HomeScreen(dashBoardScaffoldKey: _dashBoardScaffoldKey),
-      InterCityScreen(dashBoardScaffoldKey: _dashBoardScaffoldKey),
+      DailyWebPage(mobileNumber: profileController.model.data?.user?.mobile ?? ''),
+      // InterCityScreen(dashBoardScaffoldKey: _dashBoardScaffoldKey),
       const ScheduledWebPageLoader(),
       const ProfileAndSettingsScreen(),
     ];
@@ -160,8 +163,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                       press: () => changeScreen(0),
                     ),
                     NavBarItem(
-                      label: MyStrings.interCity_.tr,
-                      imagePath: MyIcons.intercityHome,
+                      label: MyStrings.dailySubTitle.tr,
+                      imagePath: MyIcons.coin,
                       index: 1,
                       isSelected: selectedIndex == 1,
                       press: () => changeScreen(1),

@@ -10,6 +10,7 @@ import 'package:ovorideuser/presentation/components/divider/custom_spacer.dart';
 import 'package:ovorideuser/presentation/components/shimmer/profiler_shimmer.dart';
 import 'package:ovorideuser/presentation/components/snack_bar/show_custom_snackbar.dart';
 import 'package:ovorideuser/presentation/components/text/header_text.dart';
+import 'package:ovorideuser/presentation/screens/inter_city/inter_city_screen.dart';
 import 'package:ovorideuser/presentation/screens/profile_and_settings/widgets/delete_account_bottom_sheet.dart';
 import 'package:ovorideuser/presentation/screens/web_view/new_settings_webview/all_web_view_page.dart';
 
@@ -34,6 +35,9 @@ class ProfileAndSettingsScreen extends StatefulWidget {
 }
 
 class _ProfileAndSettingsScreenState extends State<ProfileAndSettingsScreen> {
+
+  final GlobalKey<ScaffoldState> _dashBoardScaffoldKey = GlobalKey<ScaffoldState>();
+  
   @override
   void initState() {
     Get.put(ProfileRepo(apiClient: Get.find()));
@@ -50,8 +54,14 @@ class _ProfileAndSettingsScreenState extends State<ProfileAndSettingsScreen> {
     super.dispose();
   }
 
+      // _dashBoardScaffoldKey is now initialized as a final field above.
+
+
   @override
   Widget build(BuildContext context) {
+
+
+    
     return Scaffold(
       backgroundColor: MyColor.screenBgColor,
       appBar: CustomAppBar(
@@ -156,15 +166,17 @@ class _ProfileAndSettingsScreenState extends State<ProfileAndSettingsScreen> {
                               Get.to(() => HourlyWebPage(mobileNumber: mobile));
                             },
                             ),
-                            const CustomDivider(space: Dimensions.space15),
-                            MenuRowWidget(
-                            image: MyIcons.coin,
-                            label: MyStrings.dailySubTitle.tr,
-                            onPressed: () {
-                              String mobile = controller.user.mobile ?? '';
-                              Get.to(() => DailyWebPage(mobileNumber: mobile));
-                            },
-                            ),
+                            // const CustomDivider(space: Dimensions.space15),
+                            // MenuRowWidget(
+                            // image: MyIcons.coin,
+                            // label: MyStrings.dailySubTitle.tr,
+                            // onPressed: () {
+                            //   // String mobile = controller.user.mobile ?? '';
+                            //   // Get.to(() => DailyWebPage(mobileNumber: mobile));
+                            //   InterCityScreen(dashBoardScaffoldKey: _dashBoardScaffoldKey);
+
+                            // },
+                            // ),
                           const CustomDivider(space: Dimensions.space15),
                           MenuRowWidget(
                             image: MyIcons.money,

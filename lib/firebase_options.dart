@@ -53,8 +53,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '965320825406',
     projectId: 'emiraride-4ee4d',
     storageBucket: 'emiraride-4ee4d.firebasestorage.app',
-    androidClientId: '965320825406-8hb5b1q2jl19lq8l64bt8253kb2ugt4f.apps.googleusercontent.com',
-    iosClientId: '965320825406-62fda9g9vh4crqp1ls15ufg47is7tkgs.apps.googleusercontent.com',
     iosBundleId: 'com.inferloom.emirarider',
   );
 

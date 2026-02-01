@@ -2,19 +2,17 @@ import 'package:ovorideuser/data/model/language/language_model.dart';
 
 class MyStrings {
   //APP Name
-  static const String appName = "Emira Rider";
+  static const String appName = "NMC24 Rider";
 
   //Onboard
   static const String continue_ = "Continue";
 
-  static const String onboardTitle1 = "Check bid rate book a Emira Rider";
-
+  static const String onboardTitle1 = "Check bid rate book a NMC24 Rider";
   static const String onboardDescription1 = "User can set their bid amount for their destination, driver bid depend on user bid amount , if user satisfy they can book ride.";
-  static const String onboardTitle2 = "City to City Emira Rider Service";
+  static const String onboardTitle2 = "City to City NMC24 Rider Service";
 
-  static const String onboardDescription2 = "A city-to-city Emira Rider service, sometimes referred to as an intercity or long-distance ride service";
-
-  static const String onboardTitle3 = "Safe and Secure Emira Rider";
+  static const String onboardDescription2 = "A city-to-city NMC24 Rider service, sometimes referred to as an intercity or long-distance ride service";
+  static const String onboardTitle3 = "Safe and Secure NMC24 Rider";
 
   static const String onboardDescription3 = "Every trip is backed by safety features and driver verification, ensuring peace of mind from start to finish.";
 

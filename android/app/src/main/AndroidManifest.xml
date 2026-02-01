@@ -18,7 +18,7 @@
         </intent>
     </queries>
     <application
-        android:label="NMC"
+        android:label="NMC Rides"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true"
@@ -52,6 +52,6 @@
             android:name="flutterEmbedding"
             android:value="2" />
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBXffbNxCxmhztZGvc9plHKw92bjbOGgGI"/>
+            android:value="AIzaSyDtNpk4jEQqqGvy0AGtWI6l4nc5vhLXYMM"/>
     </application>
 </manifest>

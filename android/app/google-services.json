@@ -12,40 +12,18 @@
           "package_name": "com.inferloom.emiradriver"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "965320825406-8hb5b1q2jl19lq8l64bt8253kb2ugt4f.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.inferloom.emiradriver",
-            "certificate_hash": "5546adf7a18a3dbd041a4fedddd6476f505fb17b"
-          }
-        },
-        {
-          "client_id": "965320825406-hcari4cu948eoobd2sgdsbl85m718unv.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
           "current_key": "AIzaSyBXffbNxCxmhztZGvc9plHKw92bjbOGgGI"
+        },
+        {
+          "current_key": "AIzaSyBhQth_0mQKqzjw-Z9bGVX7ZjVuxk05pFA"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "965320825406-hcari4cu948eoobd2sgdsbl85m718unv.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "965320825406-62fda9g9vh4crqp1ls15ufg47is7tkgs.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.inferloom.emirarider"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     },
@@ -56,40 +34,40 @@
           "package_name": "com.inferloom.emirarider"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "965320825406-urb263e72niaq9v8dghceo5c7dff1pgl.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.inferloom.emirarider",
-            "certificate_hash": "917d6748a89fb3039bf53926b493af2a4fee5f39"
-          }
-        },
-        {
-          "client_id": "965320825406-hcari4cu948eoobd2sgdsbl85m718unv.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
           "current_key": "AIzaSyBXffbNxCxmhztZGvc9plHKw92bjbOGgGI"
+        },
+        {
+          "current_key": "AIzaSyBhQth_0mQKqzjw-Z9bGVX7ZjVuxk05pFA"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "965320825406-hcari4cu948eoobd2sgdsbl85m718unv.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "965320825406-62fda9g9vh4crqp1ls15ufg47is7tkgs.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.inferloom.emirarider"
-              }
-            }
-          ]
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965320825406:android:d97381b9065ce0171ecf6f",
+        "android_client_info": {
+          "package_name": "com.inferloom.nmcrider"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXffbNxCxmhztZGvc9plHKw92bjbOGgGI"
+        },
+        {
+          "current_key": "AIzaSyBhQth_0mQKqzjw-Z9bGVX7ZjVuxk05pFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
         }
       }
     }

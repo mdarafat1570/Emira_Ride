@@ -26,7 +26,7 @@ val versionCodeProp = localProps.getProperty("flutter.versionCode") ?: "1"
 val versionNameProp = localProps.getProperty("flutter.versionName") ?: "1.0.0"
 
 android {
-    namespace = "com.inferloom.emirarider"
+    namespace = "com.inferloom.nmcrider"
     compileSdk = 36
     ndkVersion = "29.0.13846066"
 
@@ -41,7 +41,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.inferloom.emirarider"
+        applicationId = "com.inferloom.nmcrider"
         minSdk = 24
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
