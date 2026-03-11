@@ -1,5 +1,1 @@
-package com.inferloom.nmcrider
-
-import io.flutter.embedding.android.FlutterActivity
-
-class MainActivity : FlutterActivity()
+// Empty file to avoid conflicts. The correct MainActivity.kt is in com.inferloom.nmcrider.

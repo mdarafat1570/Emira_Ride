@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 import java.util.Properties
 
 plugins {
@@ -21,9 +23,6 @@ val localProps = Properties().apply {
         load(file.inputStream())
     }
 }
-
-val versionCodeProp = localProps.getProperty("flutter.versionCode") ?: "1"
-val versionNameProp = localProps.getProperty("flutter.versionName") ?: "1.0.0"
 
 android {
     namespace = "com.inferloom.nmcrider"
@@ -50,12 +49,12 @@ android {
     }
 
     signingConfigs {
-        create("release") {
-            storeFile = file(keystoreProperties["storeFile"] as String)
-            storePassword = keystoreProperties["storePassword"] as String
-            keyAlias = keystoreProperties["keyAlias"] as String
-            keyPassword = keystoreProperties["keyPassword"] as String
-        }
+create("release") {
+    storeFile = file("keystore/nmcrider.jks")
+    storePassword = "inferloom@219#"
+    keyAlias = "inferloom"
+    keyPassword = "inferloom@219#"
+}
     }
 
     buildTypes {
@@ -76,7 +75,7 @@ android {
 }
 
 dependencies {
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
 }
 
 flutter {

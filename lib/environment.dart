@@ -15,7 +15,7 @@ class Environment {
   // 🗺️ MAP CONFIG
   static const bool addressPickerFromMapApi = true;
 
-  static const String mapKey = "AIzaSyDtNpk4jEQqqGvy0AGtWI6l4nc5vhLXYMM";
+  static const String mapKey = "AIzaSyBCY8kyLw0CuasykUITALBvQzDmYIuEHV8";
   static const double mapDefaultZoom = 16;
   static const String devToken = "\$2y\$12\$mEVBW3QASB5HMBv8igls3ejh6zw2A0Xb480HWAmYq6BY9xEifyBjG";
 }
