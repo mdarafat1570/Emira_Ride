@@ -45,6 +45,7 @@ class MyIcons {
   static const String xlsx = "assets/icon/files/xlsx.svg";
 
   //
+  static const String homeNav = "assets/img/icon/home.svg";
   static const String cityHome = "assets/img/icon/City.svg";
   static const String currentLocation = "assets/img/icon/currentLocation.svg";
   static const String intercityHome = "assets/img/icon/Intercity.svg";

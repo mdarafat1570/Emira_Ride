@@ -4,6 +4,7 @@ import 'package:ovorideuser/core/utils/my_color.dart';
 import 'package:ovorideuser/core/utils/my_icons.dart';
 import 'package:ovorideuser/core/utils/my_strings.dart';
 import 'package:ovorideuser/data/controller/account/profile_controller.dart';
+import 'package:ovorideuser/data/controller/location/app_location_controller.dart';
 import 'package:ovorideuser/data/controller/menu/my_menu_controller.dart';
 import 'package:ovorideuser/data/controller/pusher/global_pusher_controller.dart';
 import 'package:ovorideuser/data/repo/account/profile_repo.dart';
@@ -14,8 +15,8 @@ import 'package:ovorideuser/presentation/components/image/custom_svg_picture.dar
 import 'package:ovorideuser/presentation/components/will_pop_widget.dart';
 import 'package:ovorideuser/presentation/screens/drawer/drawer_screen.dart';
 import 'package:ovorideuser/presentation/screens/home/home_screen.dart';
-import 'package:ovorideuser/presentation/screens/inter_city/inter_city_screen.dart';
 import 'package:ovorideuser/presentation/screens/profile_and_settings/profile_and_settings_screen.dart';
+import 'package:ovorideuser/presentation/screens/web_view/home_web_view_screen.dart';
 import 'package:ovorideuser/presentation/screens/web_view/new_settings_webview/all_web_view_page.dart';
 import 'package:ovorideuser/presentation/screens/web_view/scheduled_web_page_loader.dart';
 
@@ -92,13 +93,13 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
     final profileController = Get.put(ProfileController(profileRepo: Get.find()));
 
     final pusherController = Get.put(GlobalPusherController(apiClient: Get.find()));
+    Get.put(AppLocationController());
     _dashBoardScaffoldKey = GlobalKey<ScaffoldState>();
-    
 
     _widgets = <Widget>[
+      HomeWebViewScreen(dashBoardScaffoldKey: _dashBoardScaffoldKey),
       HomeScreen(dashBoardScaffoldKey: _dashBoardScaffoldKey),
       DailyWebPage(mobileNumber: profileController.model.data?.user?.mobile ?? ''),
-      // InterCityScreen(dashBoardScaffoldKey: _dashBoardScaffoldKey),
       const ScheduledWebPageLoader(),
       const ProfileAndSettingsScreen(),
     ];
@@ -156,32 +157,39 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     NavBarItem(
-                      label: MyStrings.city.tr,
+                      label: MyStrings.home.tr,
                       imagePath: MyIcons.cityHome,
                       index: 0,
                       isSelected: selectedIndex == 0,
                       press: () => changeScreen(0),
                     ),
                     NavBarItem(
-                      label: MyStrings.dailySubTitle.tr,
-                      imagePath: MyIcons.coin,
+                      label: MyStrings.city.tr,
+                      imagePath: MyIcons.intercity,
                       index: 1,
                       isSelected: selectedIndex == 1,
                       press: () => changeScreen(1),
                     ),
                     NavBarItem(
-                      label: MyStrings.preBookSubTitle.tr,
-                      imagePath: MyIcons.hourlyTime,
+                      label: MyStrings.dailySubTitle.tr,
+                      imagePath: MyIcons.coin,
                       index: 2,
                       isSelected: selectedIndex == 2,
                       press: () => changeScreen(2),
                     ),
                     NavBarItem(
-                      label: MyStrings.menu.tr,
-                      imagePath: MyIcons.menu1,
+                      label: MyStrings.preBookSubTitle.tr,
+                      imagePath: MyIcons.hourlyTime,
                       index: 3,
                       isSelected: selectedIndex == 3,
                       press: () => changeScreen(3),
+                    ),
+                    NavBarItem(
+                      label: MyStrings.menu.tr,
+                      imagePath: MyIcons.menu1,
+                      index: 4,
+                      isSelected: selectedIndex == 4,
+                      press: () => changeScreen(4),
                     ),
                   ],
                 ),

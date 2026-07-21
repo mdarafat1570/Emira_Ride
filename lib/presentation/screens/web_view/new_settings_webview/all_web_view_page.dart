@@ -11,7 +11,7 @@ class MapWebPage extends StatelessWidget {
     return const WebViewPage(
       appBarColor: MyColor.primaryColor,
       title: MyStrings.mapSubTitle,
-      url: 'https://nmc24.com/map.php',
+      url: 'https://app.nmc24.com/map.php',
     );
   }
 }
@@ -25,7 +25,7 @@ class HourlyWebPage extends StatelessWidget {
     return WebViewPage(
       appBarColor: MyColor.primaryColor,
       title: MyStrings.hourlySubTitle,
-      url: 'https://nmc24.com/hourly.php?gid=$mobileNumber',
+      url: 'https://app.nmc24.com/hourly.php?gid=$mobileNumber',
     );
   }
 }
@@ -39,7 +39,7 @@ class DailyWebPage extends StatelessWidget {
     return WebViewPage(
       appBarColor: MyColor.primaryColor,
       title: MyStrings.dailySubTitle,
-      url: 'https://nmc24.com/daily.php?gid=$mobileNumber',
+      url: 'https://app.nmc24.com/daily.php?gid=$mobileNumber',
       showBackButton: false,
     );
   }
@@ -53,7 +53,7 @@ class RentWebPage extends StatelessWidget {
     return const WebViewPage(
       appBarColor: MyColor.primaryColor,
       title: MyStrings.rentSubTitle,
-      url: 'https://nmc24.com/rent.php',
+      url: 'https://app.nmc24.com/rent.php',
     );
   }
 }
@@ -68,7 +68,7 @@ class ScheduledWebPage extends StatelessWidget {
     return WebViewPage(
       appBarColor: MyColor.primaryColor,
       title: MyStrings.preBookSubTitle,
-      url: 'https://nmc24.com/schedule.php?gid=$mobileNumber',
+      url: 'https://app.nmc24.com/schedule.php?gid=$mobileNumber',
       appBar: true,
       showBackButton: false,
     );
@@ -84,7 +84,7 @@ class OthersWebPage extends StatelessWidget {
     return WebViewPage(
       title: MyStrings.othersSubTitle,
       appBarColor: MyColor.primaryColor,
-      url: 'https://nmc24.com/others.php?gid=$mobileNumber',
+      url: 'https://app.nmc24.com/others.php?gid=$mobileNumber',
     );
   }
 }
